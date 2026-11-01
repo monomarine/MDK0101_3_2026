@@ -1,0 +1,32 @@
+﻿<Window x:Class="MDK0101_3_2026.ChildWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MDK0101_3_2026"
+        mc:Ignorable="d"
+        Title="ChildWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Введите текст для возврата:"/>
+
+        <TextBox x:Name="ChildInputTextBox"
+                 Grid.Row="1"
+                 Margin="0,8,0,0"
+                 Height="32"
+                 VerticalContentAlignment="Center"/>
+
+        <Button x:Name="ChildSendButton"
+                Grid.Row="2"
+                Content="Отправить и закрыть"
+                Padding="12,6" Margin="0,16,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"/>
+    </Grid>
+</Window>
