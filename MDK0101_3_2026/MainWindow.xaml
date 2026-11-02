@@ -20,6 +20,7 @@
                 <Button x:Name="OpenChildButton"
                         Grid.Row="0"
                         Content="Открыть дочернее окно"
+                        Click="OpenChildButton_Click"
                         Padding="12,6"
                         HorizontalAlignment="Left"/>
 
@@ -49,11 +50,13 @@
                 <StackPanel Grid.Row="0" Orientation="Horizontal">
                     <Button x:Name="StartTaskButton"
                             Content="Запустить"
+                            Click="StartTaskButton_Click"
                             Padding="12,6" Margin="0,0,8,0"/>
                     <Button x:Name="CancelTaskButton"
                             Content="Отменить"
                             Padding="12,6"
-                            IsEnabled="False"/>
+                            Click="CancelTaskButton_Click"
+                            />
                 </StackPanel>
 
                 <ProgressBar x:Name="TaskProgressBar"
@@ -88,7 +91,7 @@
                             Orientation="Horizontal"
                             Margin="0,12,0,0">
                     <ComboBox x:Name="StrategyComboBox"
-                        .      Width="200"
+                              Width="200"
                               SelectedIndex="0">
                         <ComboBoxItem>Верхний регистр</ComboBoxItem>
                         <ComboBoxItem>Реверс</ComboBoxItem>
@@ -96,6 +99,7 @@
                     </ComboBox>
                     <Button x:Name="ApplyStrategyButton"
                             Content="Применить"
+                            Click="ApplyStrategyButton_Click"
                             Padding="12,6" Margin="8,0,0,0"/>
                 </StackPanel>
 
@@ -109,7 +113,7 @@
             </Grid>
         </TabItem>
 
-        <TabItem Header="4" MinWidth="100">
+        <TabItem Header="4" MinWidth="100" Loaded="TabItem_Loaded">
             <Grid Margin="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -121,6 +125,7 @@
                         Grid.Row="0"
                         Content="Увеличить счётчик"
                         Padding="12,6"
+                        Click="IncrementButton_Click"
                         HorizontalAlignment="Left"/>
 
                 <GroupBox Grid.Row="1" Header="Подписчик 1 — лог" Margin="0,16,0,0">

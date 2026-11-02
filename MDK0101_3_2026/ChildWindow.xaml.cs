@@ -17,9 +17,17 @@ namespace MDK0101_3_2026
     /// </summary>
     public partial class ChildWindow : Window
     {
-        public ChildWindow()
+        private readonly Action<string> _action;
+        public ChildWindow(Action<string> act)
         {
             InitializeComponent();
+            _action = act;
+        }
+
+        private void ChildSendButton_Click(object sender, RoutedEventArgs e)
+        {
+            _action?.Invoke(ChildInputTextBox.Text);
+            this.Close();
         }
     }
 }
