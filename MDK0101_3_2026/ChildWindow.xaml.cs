@@ -17,9 +17,17 @@ namespace MDK0101_3_2026
     /// </summary>
     public partial class ChildWindow : Window
     {
-        public ChildWindow()
+        private readonly Action<string> _resultDelegate; //закрыт только чтения поле - делегат
+        public ChildWindow(Action<string> del)
         {
             InitializeComponent();
+            _resultDelegate = del; //устанавл через конструктор
+        }
+
+        private void ChildSendButton_Click(object sender, RoutedEventArgs e)
+        {
+            _resultDelegate?.Invoke(ChildInputTextBox.Text); //вызываем метод для отправки через делегат
+            Close();
         }
     }
 }

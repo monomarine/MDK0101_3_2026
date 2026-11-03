@@ -24,6 +24,7 @@
 
         <Button x:Name="ChildSendButton"
                 Grid.Row="2"
+                Click="ChildSendButton_Click"
                 Content="Отправить и закрыть"
                 Padding="12,6" Margin="0,16,0,0"
                 HorizontalAlignment="Left"
