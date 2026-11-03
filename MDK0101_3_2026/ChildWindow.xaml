@@ -28,6 +28,7 @@
                 Content="Отправить и закрыть"
                 Padding="12,6" Margin="0,16,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"/>
+                VerticalAlignment="Top"
+                Click="ChildSendButton_Click"/>
     </Grid>
 </Window>

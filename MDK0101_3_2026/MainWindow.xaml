@@ -21,6 +21,7 @@
                         Click="OpenChildButton_Click"
                         Grid.Row="0"
                         Content="Открыть дочернее окно"
+                        Click="OpenChildButton_Click"
                         Padding="12,6"
                         HorizontalAlignment="Left"/>
 
@@ -126,6 +127,7 @@
                         Grid.Row="0"
                         Content="Увеличить счётчик"
                         Padding="12,6"
+                        Click="IncrementButton_Click"
                         HorizontalAlignment="Left"/>
 
                 <GroupBox Grid.Row="1" Header="Подписчик 1 — лог" Margin="0,16,0,0">
