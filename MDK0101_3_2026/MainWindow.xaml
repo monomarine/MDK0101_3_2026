@@ -18,6 +18,7 @@
                 </Grid.RowDefinitions>
 
                 <Button x:Name="OpenChildButton"
+                        Click="OpenChildButton_Click"
                         Grid.Row="0"
                         Content="Открыть дочернее окно"
                         Padding="12,6"
@@ -49,11 +50,13 @@
                 <StackPanel Grid.Row="0" Orientation="Horizontal">
                     <Button x:Name="StartTaskButton"
                             Content="Запустить"
-                            Padding="12,6" Margin="0,0,8,0"/>
+                            Padding="12,6" Margin="0,0,8,0"
+                            Click="StartTaskButton_Click"/>
+                    
                     <Button x:Name="CancelTaskButton"
                             Content="Отменить"
                             Padding="12,6"
-                            IsEnabled="False"/>
+                            Click="CancelTaskButton_Click"/>
                 </StackPanel>
 
                 <ProgressBar x:Name="TaskProgressBar"
@@ -110,7 +113,7 @@
             </Grid>
         </TabItem>
 
-        <TabItem Header="4" MinWidth="100">
+        <TabItem Header="4" MinWidth="100" Loaded="TabItem_Loaded">
             <Grid Margin="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -119,6 +122,7 @@
                 </Grid.RowDefinitions>
 
                 <Button x:Name="IncrementButton"
+                        Click="IncrementButton_Click"
                         Grid.Row="0"
                         Content="Увеличить счётчик"
                         Padding="12,6"
@@ -153,6 +157,7 @@
                              VerticalContentAlignment="Center"/>
                     <Button x:Name="AddValidatedButton"
                             Content="Добавить"
+                            Click="AddValidatedButton_Click"
                             Padding="12,6" Margin="8,0,0,0"/>
                 </StackPanel>
 
@@ -165,6 +170,52 @@
                 <ListBox x:Name="ValidatedItemsListBox"
                          Grid.Row="3"
                          Margin="0,16,0,0"/>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="6" MinWidth="100">
+            <Grid Margin="12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <TextBlock Text="Сортировать по:"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0"/>
+
+                    <ComboBox x:Name="SortModeComboBox"
+                              Width="180"
+                              VerticalContentAlignment="Center"
+                              SelectedIndex="0"/>
+
+                    <Button x:Name="SortButton"
+                            Content="Сортировать"
+                            Click="SortButton_Click"
+                            Padding="12,6"
+                            Margin="16,0,0,0"/>
+
+                    <Button x:Name="ResetListButton"
+                            Content="Сбросить список"
+                            Click="ResetListButton_Click"
+                            Padding="12,6"
+                            Margin="8,0,0,0"/>
+                </StackPanel>
+
+                <TextBlock x:Name="SortStatusTextBlock"
+                           Grid.Row="1"
+                           Margin="0,12,0,0"
+                           Foreground="Gray"
+                           TextWrapping="Wrap"/>
+
+                <GroupBox Grid.Row="2" Header="Элементы списка" Margin="0,12,0,0">
+                    <ListBox x:Name="ItemsListBox"
+                             FontFamily="Consolas"
+                             FontSize="14"
+                             Margin="4"/>
+                </GroupBox>
             </Grid>
         </TabItem>
 

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -28,6 +29,31 @@ namespace MDK0101_3_2026
         public MainWindow()
         {
             InitializeComponent();
+            _cts = new CancellationTokenSource();
+
+            sortableItems = new ObservableCollection<string>(items);
+            ItemsListBox.ItemsSource = sortableItems;
+
+            sortOptions = new()
+            {
+                ["По длине строки по возрастанию"] = (a, b) => a.Length.CompareTo(b.Length),
+                ["По длине строки по убыванию"] = (a, b) => b.Length.CompareTo(a.Length),
+                ["в алфавитном порядке А -> Я"] = (a, b) => string.Compare(a, b, StringComparison.CurrentCulture),
+                ["в алфавитном порядке Я -> А"] = (a, b) => string.Compare(b, a, StringComparison.CurrentCulture),
+                ["в случайном порядке"] = (a, b) => Random.Shared.Next(-1, 2)
+               
+            };
+
+            SortModeComboBox.ItemsSource = sortOptions.Keys;
+            SortModeComboBox.SelectedIndex = 0;
+        }
+
+        // 1 вкладка - делегат как входной параметр
+        private void OpenChildButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChildWindow child = new ChildWindow(text =>
+                ResultTextBlock.Text = text);
+            child.Show();
         }
 
         private void ApplyStrategyButton_Click(object sender, RoutedEventArgs e)
