@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="EventBus/EventBus.csproj" Id="ece3636b-3763-4519-9556-3a6f559caffe" />
   <Project Path="EventsDemo/EventsDemo.csproj" Id="a87b4f4c-14cf-4e01-9aad-56a9c9405ff0" />
+  <Project Path="factoryMethod/factoryMethod.csproj" Id="9251d6ee-fa12-4c84-9fc3-186e88e32283" />
   <Project Path="MDK0101_3_2026/MDK0101_3_2026.csproj" />
   <Project Path="OventOnLimit/OventOnLimit.csproj" Id="ed24b828-fd39-4376-902f-1dd8d09c46ac" />
   <Project Path="TemperatureMonitoring/TemperatureMonitoring.csproj" Id="201985d6-0cde-4c7a-83a7-e4ea5c1a1701" />
