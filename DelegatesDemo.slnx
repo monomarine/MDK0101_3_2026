@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Adapter-Logging/Adapter-Logging.csproj" Id="c9196604-26be-41b4-a496-80b8ccf39fec" />
   <Project Path="EventBus/EventBus.csproj" Id="ece3636b-3763-4519-9556-3a6f559caffe" />
   <Project Path="EventsDemo/EventsDemo.csproj" Id="a87b4f4c-14cf-4e01-9aad-56a9c9405ff0" />
   <Project Path="factoryMethod/factoryMethod.csproj" Id="9251d6ee-fa12-4c84-9fc3-186e88e32283" />
