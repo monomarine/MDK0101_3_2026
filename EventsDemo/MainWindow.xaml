@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <UniformGrid Rows="3">
-        <TextBox Name="InfoFromChildWindow"/>
+        <TextBlock Name="InfoFromChildWindow"/>
         <StackPanel></StackPanel>
         <Button Content="открыть окно" Name="OpenWindowButton"
                 FontSize="30"
+                Click="OpenWindowButton_Click"
                 />
     </UniformGrid>
 </Window>
