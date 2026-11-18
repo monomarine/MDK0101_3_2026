@@ -21,16 +21,6 @@ namespace EventsDemo
             InitializeComponent();
         }
 
-        private void OpenWindowButton_Click(object sender, RoutedEventArgs e)
-        {
-            var child = new ChildWindow();
-            child.MessegeSenger += MessageHandler;
-            child.Show();
-        }
-
-        private void MessageHandler(object? o, MessageEventArgs e)
-        {
-            InfoFromChildWindow.Text = e.Message;
-        }
+       
     }
 }

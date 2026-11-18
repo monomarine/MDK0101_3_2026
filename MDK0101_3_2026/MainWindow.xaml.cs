@@ -17,14 +17,11 @@ namespace MDK0101_3_2026
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly CancellationTokenSource _cts;
+        private ObservableCollection<string> sortableItems;
+        private List<string> items = new() { "кошка", "собака", "рыба" };
 
-
-        private readonly Dictionary<string, Func<string, string>> _strategies = new()
-        {
-            ["Верхний регистр"] = s => s.ToUpper(),
-            ["Реверс"] = s => new string(s.Reverse().ToArray()),
-            ["Без изменений"] = s => s,
-        };
+        private readonly Dictionary<string, Comparison<string>> sortOptions;
 
         public MainWindow()
         {
@@ -34,7 +31,7 @@ namespace MDK0101_3_2026
             sortableItems = new ObservableCollection<string>(items);
             ItemsListBox.ItemsSource = sortableItems;
 
-            sortOptions = new()
+            sortOptions = new Dictionary<string, Comparison<string>>()
             {
                 ["По длине строки по возрастанию"] = (a, b) => a.Length.CompareTo(b.Length),
                 ["По длине строки по убыванию"] = (a, b) => b.Length.CompareTo(a.Length),
@@ -70,13 +67,13 @@ namespace MDK0101_3_2026
             }
 
 
-            if (!_strategies.TryGetValue(key, out var f))
+            if (!sortOptions.TryGetValue(key, out var f))
             {
                 MessageBox.Show(key);
                 return;
             }
 
-            StrategyOutputTextBlock.Text = f(StrategyInputTextBox.Text);
+            StrategyOutputTextBlock.Text = f(StrategyInputTextBox.Text );
         }
     }
 }

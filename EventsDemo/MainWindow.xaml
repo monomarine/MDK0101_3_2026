@@ -11,6 +11,6 @@
         <StackPanel></StackPanel>
         <Button Content="открыть окно" Name="OpenWindowButton"
                 FontSize="30"
-                Click="OpenWindowButton_Click"/>
+                />
     </UniformGrid>
 </Window>

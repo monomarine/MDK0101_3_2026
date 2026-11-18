@@ -10,6 +10,6 @@
         <TextBox Name="inputTB"/>
         <Button Content="отправить и закрыть" FontSize="30"
                 Name="SendAndCloseButton"
-                Click="SendAndCloseButton_Click"/>
+                />
     </UniformGrid>
 </Window>
